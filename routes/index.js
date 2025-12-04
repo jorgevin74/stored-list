@@ -6,7 +6,7 @@ const Movies = require('../models/Movies');
 router.get('/', async function(req, res, next) {
   try{
     const movies = await Movies.find();
-    res.render('index', { title: 'Movies I watched This Year', list: [] });
+    res.render('index', { title: 'Movies I watched This Year', list: movies});
   } catch (error){
     console.log(error);
   }
